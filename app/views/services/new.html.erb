@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Offer your talent</h1>
+
+  <p>Add a service to your portfolio</p>
+
+  <%= simple_form_for([@user, @service]) do |f| %>
+    <%= f.input :name, collection: @genres, :placeholder => 'Select a genre' %>
+    <%= f.input :rate, :label => 'Rate per song' %>
+    <%= f.input :photo, as: :file, :label => 'Upload a photo' %>
+    <%= f.submit %>
+  <% end %>
+</div>
