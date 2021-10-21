@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+
   def new
     @genres = %w[Alternative Balada Banda-sinaloense Blues Children's Classical
                  Dance Electronic Hip-Hop/Rap Instrumental Jazz Latin Mariachi
@@ -9,7 +10,8 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
-    if @service.save
+    @service.user = current_user
+    if @service.save!
       redirect_to "#"
     else
       render "new"
@@ -27,6 +29,6 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:name, :rate, :user_id, :photo)
+    params.require(:service).permit(:name, :rate, :photo)
   end
 end
