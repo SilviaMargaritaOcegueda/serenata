@@ -1,5 +1,13 @@
 class ServicesController < ApplicationController
 
+  def index
+    @services = current_user.services
+  end
+
+  def show
+    @service = Service.find(params[:id])
+  end
+
   def new
     @genres = %w[Alternative Balada Banda-sinaloense Blues Children's Classical
                  Dance Electronic Hip-Hop/Rap Instrumental Jazz Latin Mariachi
@@ -12,7 +20,7 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.user = current_user
     if @service.save!
-      redirect_to "#"
+      redirect_to services_path
     else
       render "new"
     end

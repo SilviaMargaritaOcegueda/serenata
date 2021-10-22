@@ -1,0 +1,5 @@
+<div class="container">
+  <%= cl_image_tag @service.photo.key, height: 150, width: 200, crop: :fill %>
+  <%= @service.name %>
+  <%= "$#{@service.rate}" %>
+</div>
