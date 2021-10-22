@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :services
 
-  validates :type, presence: true, inclusion: { in: ["Artist", "Event host"] }
+  validates :user_type, presence: true, inclusion: { in: ["Artist", "Event host"] }
   validates :name, presence: true
   validates :email, uniqueness: true
 end
