@@ -1,0 +1,11 @@
+<% @services.each do |service|%>
+  <%= cl_image_tag service.photo.key, height: 150, width: 200, crop: :fill %>
+  <%= link_to service.name, service_path(service) %>
+  <%= "$#{service.rate}" %>
+
+  <% if current_user.user_type == 'Artist' %>
+    <%= link_to "Edit service", edit_service_path(service) %>
+  <% else %>
+    <%= link_to "Book service", new_service_booking_path(service) %>
+  <% end %>
+<% end %>

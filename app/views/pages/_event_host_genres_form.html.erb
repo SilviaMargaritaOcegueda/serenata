@@ -1,0 +1,5 @@
+<%= simple_form_for :name, url: genre_services_path, method: :get do |f| %>
+    <%= f.input :name, :label => 'How do you feel your upcoming gathering or event?',
+                collection: Service::GENRES, :prompt => 'Select a genre' %>
+    <%= f.submit 'Book now' %>
+<% end %>
