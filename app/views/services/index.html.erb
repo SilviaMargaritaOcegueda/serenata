@@ -1,3 +1,4 @@
-<% @services.each do |service|%>
-  <%= link_to service.name, service_path(service) %>
-<% end %>
+<div class="container">
+  <h1>This are all the services you offer</h1>
+  <%= render 'services' %>
+</div>

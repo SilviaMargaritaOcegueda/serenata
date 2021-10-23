@@ -8,6 +8,10 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
   end
 
+  def genre
+    @services = Service.where(name: params[:name][:name])
+  end
+
   def new
     @genres = %w[Alternative Balada Banda-sinaloense Blues Children's Classical
                  Dance Electronic Hip-Hop/Rap Instrumental Jazz Latin Mariachi
