@@ -1,0 +1,42 @@
+.index-heading {
+  font-weight: 200;
+  font-style: italic;
+}
+
+.index-subheading {
+  font-weight: 200;
+}
+
+.services-card {
+ width: 100%;
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+}
+
+.card h4, .card a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+.card-body {
+  padding: none;
+  color:#fff;
+}
+
+.booking-button-services {
+  width: 50%;
+  background-color: rgb(205, 107, 58);
+  border: none;
+  border-radius: 15px;
+}
+
+.booking-button-services:hover {
+  background-color: rgba(205, 107, 58, 0.539);
+}
