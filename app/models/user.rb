@@ -5,8 +5,9 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
 
   has_many :services
+  has_many :bookings
 
-  validates :type, presence: true, inclusion: { in: ["Artist", "Event host"] }
+  validates :user_type, presence: true, inclusion: { in: ["Artist", "Event host"] }
   validates :name, presence: true
   validates :email, uniqueness: true
 end
