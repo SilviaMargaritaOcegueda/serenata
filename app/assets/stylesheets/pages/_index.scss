@@ -1,12 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "services-customer";
 
 body {
   background-color: #DD4003;
 }
 
-h1, h2 {
-  font-family: 'Noto Sans', sans-serif;
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
   color: #fff;
 }
 
