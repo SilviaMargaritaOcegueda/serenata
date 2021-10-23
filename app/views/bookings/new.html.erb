@@ -1,6 +1,17 @@
 <div class="container">
-  <%= cl_image_tag @service.photo.key, height: 150, width: 200, crop: :fill %>
+  <% if @service.photo.attached?  %>
+    <%= cl_image_tag @service.photo.key, height: 150, width: 200, crop: :fill %>
+  <% else %>
+    <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
+  <% end %>
   <%= @service.name %>
   <%= "$#{@service.rate}" %>
-  <%= link_to 'Confirm booking',  'my_bookings' %>
+
+  <%= simple_form_for([@service, @booking]) do |f| %>
+    <%= f.input :num_songs, :label => 'How many songs?' %>
+    <%= f.input :booking_date %>
+    <%= f.submit 'Confirm booking' %>
+
+  <% end %>
+
 </div>

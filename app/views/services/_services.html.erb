@@ -9,9 +9,7 @@
   <%= link_to service.name, service_path(service) %>
   <%= "$#{service.rate}" %>
 
-  <% if current_user.user_type == 'Artist' %>
-    <%= link_to "Edit service", edit_service_path(service) %>
-  <% else %>
+  <% if current_user.user_type == 'Event host' %>
     <%= link_to "Book service", new_service_booking_path(service) %>
   <% end %>
 <% end %>
