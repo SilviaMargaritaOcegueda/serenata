@@ -18,8 +18,11 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @event_host_bookings = Booking.where(user: current_user)
-    @artist_bookings = Booking.where(service.user == current_user)
+    if current_user.user_type == "Event host"
+      @event_host_bookings = Booking.where(user: current_user)
+    else
+      @artist_bookings = current_user.bookings
+    end
   end
 
   private
