@@ -1,0 +1,31 @@
+<h1>This are your bookings</h1>
+
+ <% if current_user.user_type == 'Event host' %>
+  <% @event_host_bookings.each do |booking|%>
+    <% if booking.service.photo.attached?  %>
+      <%= cl_image_tag booking.service.photo.key, height: 150, width: 200, crop: :fill %>
+    <% else %>
+      <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
+    <% end %>
+  <% end %>
+<% else %>
+  <% @artist_bookings.each do |booking|%>
+    <% if booking.service.photo.attached?  %>
+      <%= cl_image_tag booking.service.photo.key, height: 150, width: 200, crop: :fill %>
+    <% else %>
+      <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
+    <% end %>
+  <% end %>
+
+
+
+
+  <%= link_to service.name, service_path(booking.service) %>
+  <%= "$#{booking.amount}" %>
+
+
+
+  <%# <% if current_user.user_type == 'Event host' %> %>
+    <%# <%= link_to "Book service", new_service_booking_path(service) %> %>
+  <%# <% end %> %>
+    <%#  %>
