@@ -1,9 +1,8 @@
 <div class="card p-3">
 
-<% @services.each do |service|%>
+<% @services.each do |service| %>
 
     <div>
-
       <% if service.photo.attached? %>
         <%= cl_image_tag service.photo.key, height: 150, width: 200, crop: :fill %>
       <% else %>
@@ -24,6 +23,6 @@
         <% end %>
 
       </div>
-  <% end %>
+<% end %>
 
 </div>

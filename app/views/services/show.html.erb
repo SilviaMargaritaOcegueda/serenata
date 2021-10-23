@@ -1,15 +1,19 @@
-<div class="container">
-  <% if service.photo.attached?  %>
-    <%= cl_image_tag service.photo.key, height: 150, width: 200, crop: :fill %>
+<div class="container w-75 service-show p-4">
+
+  <h3 class="mb-5"><%= @service.name %></h3>
+
+  <% if @service.photo.attached? %>
+    <%= cl_image_tag @service.photo.key, height: 150, width: 200, crop: :fill %>
   <% else %>
     <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
   <% end %>
-  <%= @service.name %>
-  <%= "$#{@service.rate}" %>
+
+  <h4 class="mt-5 mb-5"><%= "$#{@service.rate}" %></h4>
+
 
   <% if current_user.user_type == 'Artist' %>
-    <%= link_to "Edit service", edit_service_path(@service) %>
+    <%= link_to "Edit service", edit_service_path(@service), class: 'btn booking-button-services show-service-button' %>
   <% else %>
-    <%= link_to "Book service", '#' %>
+    <%= link_to "Book service", '#', class: 'btn booking-button-services' %>
   <% end %>
 </div>
