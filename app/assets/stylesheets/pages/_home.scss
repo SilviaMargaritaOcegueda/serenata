@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+.hero-button {
+  border: 1px solid rgba(253,187,45,1);
+  background-color: rgba(253,187,45,1);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+}
+
+.hero-button:hover {
+  background-position: 0;
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  border-color: rgb(212, 149, 13);
+  background-color: rgb(254, 216, 133);
+}
