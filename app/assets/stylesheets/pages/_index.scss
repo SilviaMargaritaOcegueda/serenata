@@ -1,2 +1,21 @@
 // Import page-specific CSS files here.
 @import "home";
+
+body {
+  background-color: #DD4003;
+}
+
+h1, h2 {
+  font-family: 'Noto Sans', sans-serif;
+  color: #fff;
+}
+
+a {
+  color: #000;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #000;
+}

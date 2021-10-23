@@ -1,6 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="hero vh-100 container align-items-center d-flex">
+<div class="hero-content h-50 vw-100 align-items-center text-center">
+  <div class="hero-section w-100 justify-content-center mb-5">
+    <h1 class="display-1 fw-bold">Music Is Alive Again</h1>
+    <h2 class="display-5">Find and hire the best local musicians for your next event</h2>
+  </div>
 
-<%= link_to "Log in", new_user_session_path %>
-or
-<%= link_to "Sign up", new_user_registration_path %>
+  <div class="justify-content-center hero-buttons d-flex">
+    <div class="hero-button text-uppercase m-3 p-3 w-25 rounded-pill"><%= link_to "Log in", new_user_session_path %></div>
+    <div class="hero-button text-uppercase m-3 p-3 w-25 rounded-pill"><%= link_to "Sign up", new_user_registration_path %></div>
+  </div>
+</div>
+</div>
