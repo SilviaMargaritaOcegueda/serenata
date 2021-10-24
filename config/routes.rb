@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
   # resources :users
-  resources :bookings, only: [:index]
+  resources :bookings, only: %i[index show]
   resources :services do
     collection do
       get :genre
