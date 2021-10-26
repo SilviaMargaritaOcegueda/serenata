@@ -1,3 +1,5 @@
+<% require 'date' %>
+
 <div class="container w-75 service-show p-4">
   <h3 class="mb-5"><%= @booking.service.name %></h3>
 
@@ -7,7 +9,8 @@
     <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
   <% end %>
 
-  <%= "Date: #{@booking.booking_date}" %>
+<%# the line below should display something like #=> "Sun 04 Feb 2001" it works in the console but not in the browser %>
+  <%= "Date: #{@booking_date}" %>
   <%= "#{@booking.num_songs} songs" %>
   <h4 class="mt-5 mb-5"><%= "Rate p/song $#{@booking.service.rate}" %></h4>
   <%= "Total: $#{@booking.amount}" %>

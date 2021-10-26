@@ -6,6 +6,6 @@
   <% end %>
 
   <%= link_to booking.service.name, booking_path(booking) %>
-  <%= "Date: #{booking.booking_date}" %>
+  <%= "Date: #{booking.booking_date.strftime('%a %d %b %Y')}" %>
   <%= "#{booking.num_songs} songs" %>
 <% end %>
