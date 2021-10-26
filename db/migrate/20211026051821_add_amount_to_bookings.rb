@@ -1,5 +1,5 @@
 class AddAmountToBookings < ActiveRecord::Migration[6.0]
   def change
-    add_column :bookings, :amount, :float
+    add_column :bookings, :amount, :integer
   end
 end

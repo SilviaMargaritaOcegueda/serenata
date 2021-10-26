@@ -1,18 +1,17 @@
+require 'date'
 class BookingsController < ApplicationController
   def new
     @service = Service.find(params[:service_id])
-    @booking = Booking.new(service: @service,
-                           user: current_user)
+    @booking = Booking.new
   end
 
   def create
+    @booking = Booking.new(booking_params)
     @service = Service.find(params[:service_id])
-    @amount = booking_params[:num_songs] * @service.rate
-    @booking = Booking.new(service: @service,
-                           user: current_user,
-                           amount: @amount,
-                           num_songs: booking_params[:num_songs],
-                           booking_date: booking_params[:booking_date])
+    @booking.service = @service
+    @amount = @booking.num_songs * @service.rate
+    @booking.amount = @amount
+    @booking.user = current_user
     @booking.save!
     redirect_to bookings_path
   end
@@ -27,6 +26,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @booking_date = @booking.booking_date.strftime('%a %d %b %Y')
   end
 
   private
