@@ -1,3 +1,14 @@
+// Form heading styles
+.hero {
+  h1 {
+    font-family: $headers-font;
+    font-weight: 300;
+  }
+
+  p {
+    color: $w;
+  }
+}
 
 form {
   background:rgba(251, 251, 251, 0.197);
@@ -53,7 +64,8 @@ form {
 
     &[type="text"],
     &[type="email"],
-    &[type="password"] {
+    &[type="password"],
+    &[type="number"] {
 
       &:focus {
         background: rgba(255,255,255,0.1);
@@ -170,6 +182,10 @@ button:focus {
   }
 }
 
+.form-control {
+  color: $w;
+
+  &:focus {
 
 // Authentication form styles
 
@@ -191,6 +207,13 @@ button:focus {
   }
 }
 
+.form-group {
+  color: $w;
+  input {
+    background: transparent;
+    border-radius: 20px;
+  }
+    
 .form-actions {
   input {
     background: rgb(227, 227, 227);
