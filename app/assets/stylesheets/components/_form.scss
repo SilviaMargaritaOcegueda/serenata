@@ -1,3 +1,14 @@
+// Form heading styles
+.hero {
+  h1 {
+    font-family: $headers-font;
+    font-weight: 300;
+  }
+
+  p {
+    color: $w;
+  }
+}
 
 form {
   padding: 2em;
@@ -54,7 +65,8 @@ form {
     }
 
     &[type="email"],
-    &[type="password"] {
+    &[type="password"],
+    &[type="number"] {
 
       &:focus {
         background: rgba(255,255,255,0.1);
@@ -164,5 +176,21 @@ button:focus {
   &:focus {
     background: transparent;
     outline: none;
+  }
+}
+
+.form-control {
+  color: $w;
+
+  &:focus {
+    color: $w;
+  }
+}
+
+.form-group {
+  color: $w;
+  input {
+    background: transparent;
+    border-radius: 20px;
   }
 }
