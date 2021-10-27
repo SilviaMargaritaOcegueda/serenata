@@ -1,0 +1,44 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.grid-item {
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 30px;
+  color: $w;
+
+  img {
+    width: 100%;
+    margin-bottom: $margin;
+    border-radius: 20px;
+  }
+
+  .service-grid-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $margin-half;
+  }
+}
+
+.edit-service-button {
+  margin-top: $margin-half;
+  background: $w;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px 15px;
+
+  a {
+    color: $orange;
+  }
+
+  &:hover {
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  }
+}
+
+.edit-service-button a:hover {
+  color: $orange;
+}

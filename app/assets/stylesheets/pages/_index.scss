@@ -2,6 +2,7 @@
 @import "home";
 @import "services";
 @import "sign-in";
+@import "grid-index";
 
 body {
   background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(247,87,0,1) 0%, rgba(249,0,0,1) 90.1% );
@@ -9,15 +10,14 @@ body {
 
 h1, h2, h3, h4, a {
   font-family: $body-font;
-  color: #fff;
+  color: $w
 }
 
 a:hover {
   text-decoration: none;
-  color: #fff;
+  color: $w
 }
 
-.main {
-  height: 100vh;
-  width: 100vw;
+.text-bold {
+  font-weight: 700;
 }

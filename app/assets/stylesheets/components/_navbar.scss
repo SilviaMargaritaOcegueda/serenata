@@ -1,7 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
-  border-bottom: 0.75px solid #fff;
+  position: fixed;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -43,9 +44,9 @@
 }
 
 .dropdown-menu {
-  padding-top: 25px;
-    background: transparent;
+    background: $orange;
     border: none;
+    border-radius: 20px;
 }
 
 .dropdown-menu a:hover {
@@ -56,7 +57,7 @@
 
 #home-sign-up-nav {
   background: $w;
-  color: rgba(249,0,0,1);
+  color: $orange;
   border-radius: 20px;
   width: 150px;
   text-align: center;
