@@ -8,8 +8,8 @@
   <%= "$#{@service.rate}" %>
 
   <%= simple_form_for([@service, @booking]) do |f| %>
-    <%= f.input :num_songs, :label => 'How many songs?' %>
-    <%= f.input :booking_date %>
+    <%= f.input :num_songs, :label => 'How many songs?', input_html: { min: 1 } %>
+    <%= f.input :booking_date, as: :date, html5: true %>
     <%= f.submit 'Confirm booking' %>
 
   <% end %>

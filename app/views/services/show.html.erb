@@ -14,8 +14,9 @@
   <% if current_user.user_type == 'Event host' %>
     <%= link_to "Book service", '#', class: 'btn booking-button-services' %>
   <% end %>
-</div>
 
-  <%# For 'Artist' when enabling the service#edit %>
-  <%# <% else %>
-    <%# <%= link_to "Edit service", edit_service_path(@service), class: 'btn booking-button-services show-service-button' %>
+  <% if current_user == @service.user %>
+    <%= link_to "Edit service", edit_service_path(@service), class: 'btn booking-button-services show-service-button' %>
+    <%= link_to "Delete", service_path(@service), method: "delete", class: 'btn booking-button-services show-service-button' %>
+  <% end %>
+</div>
