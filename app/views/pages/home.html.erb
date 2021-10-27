@@ -8,8 +8,8 @@
 
       <div class="justify-content-around hero-buttons d-flex">
         <% unless user_signed_in? %>
-          <div class="hero-button text-uppercase m-3 p-3 w-50 rounded-pill"><%= link_to "Log in", new_user_session_path %></div>
-          <div class="hero-button text-uppercase m-3 p-3 w-50 rounded-pill"><%= link_to "Sign up", new_user_registration_path %></div>
+          <%= link_to "Log in", new_user_session_path, class: 'hero-button text-uppercase m-3 p-3 w-50 rounded-pill' %>
+         <%= link_to "Sign up", new_user_registration_path, class: 'hero-button text-uppercase m-3 p-3 w-50 rounded-pill' %>
           <% else %>
             <% if user_signed_in? && current_user.user_type == 'Event host' %>
               <%= render 'event_host_genres_form' %>
