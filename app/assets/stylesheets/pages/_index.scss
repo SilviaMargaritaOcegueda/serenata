@@ -1,6 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "services";
+@import "sign-in";
 
 body {
   background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(247,87,0,1) 0%, rgba(249,0,0,1) 90.1% );
@@ -14,4 +15,9 @@ h1, h2, h3, h4, a, ul, li {
 a:hover {
   text-decoration: none;
   color: #fff;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
 }
