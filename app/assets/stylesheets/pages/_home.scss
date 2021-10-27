@@ -17,12 +17,13 @@
 
 .hero {
   height: 100vh;
+  overflow: hidden;
 }
 
 .hero-section {
   width: 600px;
   text-align: left;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 
   h1 {
   font-family: $headers-font;
