@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .hero-button {
-  border: 1px solid rgba(253,187,45,1);
-  background-color: rgba(253,187,45,1);
+  width: 50%;
+  border: 1px solid #fff;
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
@@ -12,6 +12,25 @@
 .hero-button:hover {
   background-position: 0;
   box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
-  border-color: rgb(212, 149, 13);
-  background-color: rgb(254, 216, 133);
+  background: rgba(255, 255, 255, 0.418);
+}
+
+.hero {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-section {
+  width: 600px;
+  text-align: left;
+  margin-bottom: 5%;
+
+  h1 {
+  font-family: $headers-font;
+  }
+
+  h2 {
+    font-family: $body-font;
+    font-weight: 400;
+  }
 }
