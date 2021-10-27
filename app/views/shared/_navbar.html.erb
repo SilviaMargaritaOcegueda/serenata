@@ -1,5 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "Serenata", root_path, class: "nav-logo nav-link" %>
+<div class="navbar navbar-expand-sm navbar-lewagon">
+  <%= link_to "Serenata", root_path, class: "nav-link nav-logo" %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,7 +15,7 @@
         <li class="nav-item">
           <%= link_to "My bookings", bookings_path, class: "nav-link" %>
         </li>
-        <li class="nav-item nav-link active">
+        <li class="nav-item nav-link active" id="user-greeting">
           <%= "Hello, #{current_user.name}" %>
         </li>
         <li class="nav-item dropdown">

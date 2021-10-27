@@ -3,20 +3,16 @@
 @import "services";
 
 body {
-  background-color: #DD4003;
+  background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(247,87,0,1) 0%, rgba(249,0,0,1) 90.1% );
+  overflow: hidden;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
-}
-
-a {
-  color: #000;
+h1, h2, h3, h4, a, ul, li {
   font-family: 'Noto Sans', sans-serif;
+  color: #fff;
 }
 
 a:hover {
   text-decoration: none;
-  color: #000;
+  color: #fff;
 }
