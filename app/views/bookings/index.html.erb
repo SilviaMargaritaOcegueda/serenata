@@ -1,10 +1,12 @@
 <div class="main main-index">
-  <h1>Here are your upcoming bookings:</h1>
+  <div class="p-5">
+    <h1>Here are your upcoming bookings:</h1>
 
-  <% if current_user.user_type == 'Event host' %>
-    <%= render 'event_host_index' %>
-  <% else %>
-    <%= render 'artist_index' %>
-  <% end %>
+    <% if current_user.user_type == 'Event host' %>
+      <%= render 'event_host_index' %>
+    <% else %>
+      <%= render 'artist_index' %>
+    <% end %>
+  </div>
 
 </div>
