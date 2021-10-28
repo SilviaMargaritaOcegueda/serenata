@@ -19,12 +19,13 @@
           <%= "Hello, #{current_user.name}" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= render 'shared/avatar' %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
             <% if current_user.user_type == 'Event host' %>
               <%= link_to "List an event (Coming Soon)", root_path, class: "dropdown-item" %>
             <% else %>
+              <%= link_to "My services", services_path, class: "dropdown-item" %>
               <%= link_to "Add a service", new_service_path, class: "dropdown-item" %>
             <% end %>
           </div>
