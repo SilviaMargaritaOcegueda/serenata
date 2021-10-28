@@ -17,19 +17,22 @@
 
 .main {
   padding-top: 15vh;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
+}
+
+#hero {
+  height: 100vh;
 }
 
 .main-overflow {
   overflow: auto !important;
-  padding-bottom: 5vh;
 }
 
 .main-index {
   padding-right: 30px;
   padding-left: 30px;
-  margin-bottom: 15vh;
+  margin-bottom: 10vh;
 
   h1 {
     font-family: $body-font;

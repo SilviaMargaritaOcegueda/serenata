@@ -29,6 +29,7 @@
   text-align: center;
   border-radius: 20px;
   padding: 10px 15px;
+  color: $orange;
 
   a {
     color: $orange;
@@ -36,6 +37,7 @@
 
   &:hover {
     box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    color: $orange;
   }
 }
 
