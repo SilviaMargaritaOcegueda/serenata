@@ -22,6 +22,11 @@
   overflow: hidden;
 }
 
+.main-overflow {
+  overflow: auto !important;
+  padding-bottom: 5vh;
+}
+
 .main-index {
   padding-right: 30px;
   padding-left: 30px;
