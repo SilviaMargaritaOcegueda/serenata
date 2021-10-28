@@ -6,6 +6,7 @@
   <%= simple_form_for([@user, @service]) do |f| %>
     <%= f.input :name, collection: Service::GENRES, :placeholder => 'Select a genre' %>
     <%= f.input :rate, :label => 'Rate per song', input_html: { min: 1 } %>
+    <%= f.input :demo_link, :label => 'Link to a demo video' %>
     <%= f.input :photo, as: :file, :label => 'Upload a photo' %>
     <%= f.submit %>
   <% end %>
