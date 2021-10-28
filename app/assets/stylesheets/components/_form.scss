@@ -1,9 +1,21 @@
+// Form heading styles
+.hero {
+  h1 {
+    font-family: $headers-font;
+    font-weight: 300;
+  }
+
+  p {
+    color: $w;
+  }
+}
 
 form {
+  background:rgba(251, 251, 251, 0.197);
   padding: 2em;
   width: 100%;
   border-radius: 20px;
- border: 1px solid #fff;
+  border: 1px solid #fff;
   backdrop-filter: blur(10px);
   box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
   text-align: center;
@@ -17,7 +29,6 @@ form {
     font-size: 1.4rem;
     margin-top: 0;
     margin-bottom: 60px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
   }
 
   a {
@@ -36,7 +47,6 @@ form {
 
   input {
     background: transparent;
-    width: 200px;
     padding: 1em;
     margin-bottom: 1em;
     border: 1px solid #fff;
@@ -46,15 +56,16 @@ form {
     font-family: Montserrat, sans-serif;
     font-weight: 400;
     transition: all 0.2s ease-in-out;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 
     &:hover {
       background: rgba(255,255,255,0.1);
       box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
     }
 
+    &[type="text"],
     &[type="email"],
-    &[type="password"] {
+    &[type="password"],
+    &[type="number"] {
 
       &:focus {
         background: rgba(255,255,255,0.1);
@@ -85,15 +96,15 @@ form {
 ::placeholder {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  color: #fff;
+  color: $w;
 }
 
 .drop {
   background: $white;
   backdrop-filter: blur(10px);
   border-radius: 10px;
-  border-left: 1px solid $white;
-  border-top: 1px solid $white;
+  border-left: 1px solid $w;
+  border-top: 1px solid $w;
   box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
   position: absolute;
   transition: all 0.2s ease;
@@ -137,7 +148,6 @@ form {
   }
 }
 
-a,
 input:focus,
 select:focus,
 textarea:focus,
@@ -161,8 +171,61 @@ button:focus {
   border-radius: 20px;
   color: #fff;
 
+  option {
+    background: transparent;
+  }
+
   &:focus {
     background: transparent;
     outline: none;
+  }
+}
+
+// Authentication form styles
+
+.form-inputs {
+  color: $w;
+  text-align: center;
+
+  input {
+    background: transparent;
+    border-radius: 15px;
+  }
+
+  &:focus {
+    background: transparent;
+  }
+
+  .form-text {
+    color: $w;
+  }
+}
+
+.form-group {
+  color: $w;
+  input {
+    background: transparent;
+    border-radius: 20px;
+  }
+}
+
+.form-actions {
+  input {
+    background: rgb(227, 227, 227);
+    border: 1px solid $w;
+    color: #000;
+    border-radius: 20px;
+    width: 300px;
+  }
+
+  input:hover {
+    font-weight: 600;
+    background: $w;
+  }
+}
+
+.authen-form {
+  form {
+    margin-bottom: 15px;
   }
 }

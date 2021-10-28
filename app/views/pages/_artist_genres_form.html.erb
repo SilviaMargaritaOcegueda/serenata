@@ -1,5 +1,5 @@
 <%= simple_form_for :name, url: genre_services_path, method: :get do |f| %>
-    <%= f.input :name, :label => 'Get some ideas from other artists',
+    <%= f.input :name, :label => 'Explore the magic of artists just like you',
                 collection: Service::GENRES, :prompt => 'Select a genre' %>
     <%= f.submit 'Search' %>
 <% end %>

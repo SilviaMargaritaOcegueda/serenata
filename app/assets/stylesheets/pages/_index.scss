@@ -1,17 +1,23 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "services";
+@import "sign-in";
+@import "grid-index";
 
 body {
   background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(247,87,0,1) 0%, rgba(249,0,0,1) 90.1% );
 }
 
-h1, h2, h3, h4, a, ul, li {
-  font-family: 'Noto Sans', sans-serif;
-  color: #fff;
+h1, h2, h3, h4, a {
+  font-family: $body-font;
+  color: $w
 }
 
 a:hover {
   text-decoration: none;
-  color: #fff;
+  color: $w
+}
+
+.text-bold {
+  font-weight: 700;
 }
