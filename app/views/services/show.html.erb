@@ -1,6 +1,6 @@
 <div class="container w-75 service-show p-4">
 
-  <h3 class="mb-5"><%= @service.name %></h3>
+  <h3 class="mb-5"><%= @service.name %> > <%= @service.user.name %></h3>
 
   <% if @service.photo.attached? %>
     <%= cl_image_tag @service.photo.key, height: 150, width: 200, crop: :fill %>
@@ -9,7 +9,7 @@
   <% end %>
 
   <h4 class="mt-5 mb-5"><%= "$#{@service.rate}" %></h4>
-
+  <%= link_to 'Demo video', @service.demo_link, target: "_blank", class: 'btn booking-button-services show-service-button', input_html: { target: '_blank' } %>
 
   <% if current_user.user_type == 'Event host' %>
     <%= link_to "Book service", '#', class: 'btn booking-button-services' %>

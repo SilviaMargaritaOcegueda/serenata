@@ -45,9 +45,15 @@ class ServicesController < ApplicationController
     redirect_to services_path
   end
 
+  # def destroy_pop
+  #   pops = Service.where(name: 'Pop')
+  #   pops.each.destroy
+  # end
+  # destroy_pop
+
   private
 
   def service_params
-    params.require(:service).permit(:name, :rate, :photo)
+    params.require(:service).permit(:name, :rate, :photo, :demo_link)
   end
 end
