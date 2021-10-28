@@ -1,19 +1,22 @@
-<div class="grid">
- <% @services.each do |service|%>
+<div class="grid grid-index">
+  <% @services.each do |service|%>
     <div class="grid-item">
       <% if service.photo.attached? %>
-        <%= cl_image_tag booking.service.photo.key %>
+        <%= cl_image_tag service.photo.key %>
       <% else %>
         <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
       <% end %>
+
       <div class="service-grid-info">
-        <%= link_to service.name, service_path(service), class: 'text-bold' %>
+        <%= link_to service.user.name, service_path(service), class: 'text-bold' %>
         <%= "$#{service.rate}" %>
       </div>
+
       <% if current_user.user_type == 'Artist' %>
-        <%= link_to "See details", service_path(service), class: 'btn btn-primary' %>
+        <div class="edit-service-button"><%= link_to "See details", service_path(service), class: 'edit-service-link' %></div>
       <% else %>
-        <%= link_to "Book service", new_service_booking_path(service), class: 'btn btn-primary booking-button-services' %>
+        <div class="edit-service-button"><%= link_to "See details", service_path(service), class: 'edit-service-link' %></div>
+        <div class="edit-service-button"><%= link_to "Book service", new_service_booking_path(service), class: 'edit-service-link' %></div>
       <% end %>
     </div>
   <% end %>
