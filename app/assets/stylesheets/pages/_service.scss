@@ -1,0 +1,22 @@
+.service-show {
+
+  h4 {
+    padding: 15px 0;
+  }
+
+  a {
+    padding: 10px 120px;
+    margin: 0 15px;
+  }
+
+  img {
+    height: 50%;
+    border-radius: 20px;
+  }
+}
+
+#service-show {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
