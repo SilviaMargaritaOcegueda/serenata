@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     if current_user.user_type == "Event host"
       @event_host_bookings = Booking.where(user: current_user)
     else
-      @artist_bookings = Booking.where(:service[user] == current_user)
+      @artist_bookings = Booking.joins(:service).where("services.user_id = ?", current_user.id)
     end
   end
 
