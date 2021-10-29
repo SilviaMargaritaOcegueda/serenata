@@ -1,22 +1,25 @@
-<div class="container w-75 service-show p-4">
+<div class="main main-index" id="service-show">
+  <div class="service-show">
+    <h1><span class="text-bold"><%= @service.name %></span> — <%= @service.user.name %></h1>
 
-  <h3 class="mb-5"><%= @service.name %> > <%= @service.user.name %></h3>
+    <% if @service.photo.attached? %>
+      <%= cl_image_tag @service.photo.key %>
+    <% else %>
+      <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
+    <% end %>
 
-  <% if @service.photo.attached? %>
-    <%= cl_image_tag @service.photo.key, height: 150, width: 200, crop: :fill %>
-  <% else %>
-    <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
-  <% end %>
+    <h4 class="m-3"><%= "$#{@service.rate}/hr" %></h4>
+    <div class="mt-3">
+      <%= link_to 'Demo video', @service.demo_link, class: 'edit-service-button', target: "_blank", input_html: { target: '_blank' } %>
 
-  <h4 class="mt-5 mb-5"><%= "$#{@service.rate}" %></h4>
-  <%= link_to 'Demo video', @service.demo_link, target: "_blank", class: 'btn booking-button-services show-service-button', input_html: { target: '_blank' } %>
+      <% if current_user.user_type == 'Event host' %>
+        <%= link_to "Book service", '#', class: 'edit-service-button' %>
+      <% end %>
 
-  <% if current_user.user_type == 'Event host' %>
-    <%= link_to "Book service", '#', class: 'btn booking-button-services' %>
-  <% end %>
-
-  <% if current_user == @service.user %>
-    <%= link_to "Edit service", edit_service_path(@service), class: 'btn booking-button-services show-service-button' %>
-    <%= link_to "Delete", service_path(@service), method: "delete", class: 'btn booking-button-services show-service-button' %>
-  <% end %>
+      <% if current_user == @service.user %>
+        <%= link_to "Edit service", edit_service_path(@service), class: 'edit-service-button' %>
+        <%= link_to "Delete", service_path(@service), method: "delete", class: 'edit-service-button' %>
+      <% end %>
+    </div>
+  </div>
 </div>
