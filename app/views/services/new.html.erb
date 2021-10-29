@@ -1,8 +1,8 @@
 <div class="main">
   <div class="container">
-    <h1>Share your talent with the world. List your service.</h1>
+    <h1 class="mb-4">Share your talent with the world. List your service.</h1>
 
-    <p>Get booked by hundreds of event hosts near you</p>
+    <p class="mb-4">Get booked by hundreds of event hosts near you</p>
 
     <%= simple_form_for([@user, @service]) do |f| %>
       <%= f.input :name, collection: Service::GENRES, :placeholder => 'Select a genre' %>

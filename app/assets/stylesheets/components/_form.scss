@@ -66,13 +66,18 @@ form {
     &[type="text"],
     &[type="email"],
     &[type="password"],
-    &[type="number"] {
+    &[type="number"],
+    &[type="file"] {
 
       &:focus {
         background: rgba(255,255,255,0.1);
         box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
       }
     }
+
+    &[type="file"] {
+      background: transparent;
+     }
 
     &[type="button"] {
       margin-top: 10px;
@@ -233,4 +238,8 @@ button:focus {
   form {
     margin-bottom: 15px;
   }
+}
+
+.upload-button {
+  background: transparent;
 }
