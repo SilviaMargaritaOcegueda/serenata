@@ -1,11 +1,14 @@
-<div class="container">
-  <h1><%= "Edit your #{@service.name} service" %></h1>
+<div class="main">
+  <div class="container">
+    <h1><%= "Edit your #{@service.name} service" %></h1>
 
-  <%= simple_form_for(@service) do |f| %>
-    <%= f.input :name, collection: Service::GENRES, :placeholder => 'Select a genre' %>
-    <%= f.input :rate, :label => 'Rate per song', input_html: { min: 1 } %>
-    <%= f.input :demo_link, :label => 'Link to a demo video' %>
-    <%= f.input :photo, as: :file, :label => 'Upload a photo' %>
-    <%= f.submit "Update" %>
-  <% end %>
+    <%= simple_form_for(@service) do |f| %>
+      <%= f.input :name, collection: Service::GENRES, :placeholder => 'Select a genre' %>
+      <%= f.input :rate, :label => 'Rate per song', input_html: { min: 1 } %>
+      <%= f.input :demo_link, :label => 'Link to a demo video' %>
+      <%= f.input :photo, as: :file, :label => 'Upload a photo' %>
+      <%= f.submit "Update" %>
+    <% end %>
+  </div>
+
 </div>
