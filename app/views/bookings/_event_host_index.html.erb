@@ -7,11 +7,12 @@
         <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
       <% end %>
       <div class="service-grid-info">
-        <%= link_to booking.service.name, booking_path(booking), class: 'text-bold' %>
-        <%= "#{booking.num_songs} songs" %>
+        <h4><%= booking.service.name %></h4>
+        <p><%= "#{booking.num_songs} songs" %></p>
+        <p><%= "#{booking.booking_date.strftime('%a %d %b %Y')}" %></p>
       </div>
-      <%= "#{booking.booking_date.strftime('%a %d %b %Y')}" %>
-      <div class="edit-service-button"><a href="" class="edit-service-link">Edit Booking (Coming soon)</a></div>
+
+      <%= link_to "See details", booking_path(booking), class: 'edit-service-button' %>
     </div>
   <% end %>
 </div>

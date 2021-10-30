@@ -1,22 +1,29 @@
-<% require 'date' %>
+<div class="main service-index">
+  <div class="service-show container">
+    <h1 class="text-bold mb-4"><%= @booking.service.name %></h1>
 
-<div class="container w-75 service-show p-4">
-  <h3 class="mb-5"><%= @booking.service.name %></h3>
+    <div class="service-img">
+      <% if @booking.service.photo.attached? %>
+        <%= cl_image_tag @booking.service.photo.key %>
+      <% else %>
+        <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
+      <% end %>
+    </div>
 
-  <% if @booking.service.photo.attached? %>
-    <%= cl_image_tag @booking.service.photo.key, height: 150, width: 200, crop: :fill %>
-  <% else %>
-    <img alt="image" src="https://images.unsplash.com/photo-1567361672830-f7aa558ec4e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80">
-  <% end %>
 
-  <%= "Date: #{@booking_date}" %>
-  <%= "#{@booking.num_songs} songs" %>
-  <h4 class="mt-5 mb-5"><%= "Rate p/song $#{@booking.service.rate}" %></h4>
-  <%= "Total: $#{@booking.amount}" %>
-  <% if current_user == @booking.user %>
-    <%= link_to "Delete", booking_path(@booking), method: "delete", class: 'edit-service-button' %>
-  <% end %>
-  <%= link_to "All my bookings", bookings_path, class: 'btn booking-button-services show-service-button' %>
+    <div class="horizontal-line"></div>
+
+    <div class="mb-4 service-details">
+      <h4><%= "Date: #{@booking_date}" %></h4>
+      <h4><%= "#{@booking.num_songs} songs" %></h4>
+      <h4>Rate per song: <span class="light">$<%= @booking.service.rate %></span></h4>
+      <h4><%= "Total: $#{@booking.amount}" %></h4>
+    </div>
+
+    <% if current_user == @booking.user %>
+      <%= link_to "Delete", booking_path(@booking), method: "delete", class: 'edit-service-button' %>
+    <% end %>
+    <%= link_to "All my bookings", bookings_path, class: 'edit-service-button' %>
+  </div>
+
 </div>
-
-  <%# <% if current_user.user_type == "Artist" %>

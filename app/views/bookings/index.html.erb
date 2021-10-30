@@ -1,6 +1,8 @@
 <div class="main main-index">
   <div class="p-5">
-    <h1>Here are your upcoming bookings:</h1>
+    <h1 class="horizontal-line">Here are your upcoming bookings:</h1>
+
+    <hr>
 
     <% if current_user.user_type == 'Event host' %>
       <%= render 'event_host_index' %>
