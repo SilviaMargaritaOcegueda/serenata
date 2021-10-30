@@ -1,27 +1,27 @@
 class ServicesController < ApplicationController
-  before_action :add_index_breadcrumb, only: [:show, :new, :edit]
+  # before_action :add_index_breadcrumb, only: [:show, :new, :edit]
 
   def index
     @services = current_user.services
-    add_breadcrumb("My services")
+    # add_breadcrumb("My services")
     # raise
   end
 
   def show
     @service = Service.find(params[:id])
-    add_breadcrumb(artist_name_or_genre)
+    # add_breadcrumb(artist_name_or_genre)
   end
 
   def genre
     @services = Service.where(name: params[:name][:name])
-    add_breadcrumb(params[:name][:name])
+    # add_breadcrumb(params[:name][:name])
     # raise
   end
 
   def new
     @genres = Service::GENRES
     @service = Service.new
-    add_breadcrumb("New")
+    # add_breadcrumb("New")
   end
 
   def create
@@ -36,8 +36,8 @@ class ServicesController < ApplicationController
 
   def edit
     @service = Service.find(params[:id])
-    add_breadcrumb(@service.name, service_path(@service))
-    add_breadcrumb("Edit")
+    # add_breadcrumb(@service.name, service_path(@service))
+    # add_breadcrumb("Edit")
   end
 
   def update
@@ -64,33 +64,33 @@ class ServicesController < ApplicationController
     params.require(:service).permit(:name, :rate, :photo, :demo_link)
   end
 
-  def add_index_breadcrumb
-    add_breadcrumb(index_label, index_or_genre)
-  end
+  # def add_index_breadcrumb
+  #   add_breadcrumb(index_label, index_or_genre)
+  # end
 
-  def index_label
-    @service = Service.find(params[:id])
-    if @service.user == current_user
-      return "My services"
-    else
-      return @service.name
-    end
-  end
+  # def index_label
+  #   @service = Service.find(params[:id])
+  #   if @service.user == current_user
+  #     return "My services"
+  #   else
+  #     return @service.name
+  #   end
+  # end
 
-  def index_or_genre
-    if current_user.user_type == "Artist"
-      return services_path
-    else
-      return genre_services_path
-    end
-  end
+  # def index_or_genre
+  #   if current_user.user_type == "Artist"
+  #     return services_path
+  #   else
+  #     return genre_services_path
+  #   end
+  # end
 
-  def artist_name_or_genre
-    @service = Service.find(params[:id])
-    if @service.user == current_user
-      return @service.name
-    else
-      return @service.user.name
-    end
-  end
+  # def artist_name_or_genre
+  #   @service = Service.find(params[:id])
+  #   if @service.user == current_user
+  #     return @service.name
+  #   else
+  #     return @service.user.name
+  #   end
+  # end
 end
