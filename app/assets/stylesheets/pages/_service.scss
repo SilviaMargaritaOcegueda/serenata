@@ -1,5 +1,5 @@
 .service-show {
-
+  text-align: center;
   h4 {
     padding: 15px 0;
   }
@@ -10,13 +10,27 @@
   }
 
   img {
-    height: 50%;
+    height: 40vh;
     border-radius: 20px;
   }
+}
+
+.service-img {
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid $w;
 }
 
 #service-show {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.service-details {
+text-align: center;
+
+h4 {
+    font-size: 1em;
+  }
 }

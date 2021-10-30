@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
 }
 
@@ -9,11 +9,12 @@
   border-radius: 20px;
   padding: 30px;
   color: $w;
+  text-align: center;
 
   img {
     width: 100%;
     object-fit: cover;
-    height: 450px;
+    height: 400px;
     margin-bottom: $margin;
     border-radius: 20px;
   }
@@ -21,7 +22,16 @@
   .service-grid-info {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-bottom: $margin-half;
+  }
+}
+
+.service-grid-info {
+  text-align: center;
+  h1, h4, p {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
@@ -30,7 +40,7 @@
   background: $w;
   text-align: center;
   border-radius: 20px;
-  padding: 10px 15px;
+  padding: 10px 25px;
   color: $orange;
 
   a {
