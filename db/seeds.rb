@@ -12,7 +12,7 @@
     email: Faker::Internet.email,
     password: 'password',
     name: Faker::Name,
-    user_type:'Artist'
+    user_type: 'Artist'
   )
 
   10.times do

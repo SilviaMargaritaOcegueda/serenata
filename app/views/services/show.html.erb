@@ -9,11 +9,13 @@
     <% end %>
 
     <h4 class="m-3"><%= "$#{@service.rate}/hr" %></h4>
+    <%# For the JS injection %>
+    <%# <div id=demo-video> %>
+    <%# </div> %>
     <div class="mt-3">
       <%= link_to 'Demo video', @service.demo_link, class: 'edit-service-button', target: "_blank", input_html: { target: '_blank' } %>
-
       <% if current_user.user_type == 'Event host' %>
-        <%= link_to "Book service", '#', class: 'edit-service-button' %>
+        <%= link_to "Book service", new_service_booking_path(@service), class: 'edit-service-button' %>
       <% end %>
 
       <% if current_user == @service.user %>
@@ -23,3 +25,6 @@
     </div>
   </div>
 </div>
+
+      <%# this is the YT code given:
+      <iframe width="280" height="157" src="https://youtu.be/7z6L7FRCvq0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> %>
