@@ -13,5 +13,10 @@
   <%= "#{@booking.num_songs} songs" %>
   <h4 class="mt-5 mb-5"><%= "Rate p/song $#{@booking.service.rate}" %></h4>
   <%= "Total: $#{@booking.amount}" %>
+  <% if current_user == @booking.user %>
+    <%= link_to "Delete", booking_path(@booking), method: "delete", class: 'edit-service-button' %>
+  <% end %>
   <%= link_to "All my bookings", bookings_path, class: 'btn booking-button-services show-service-button' %>
 </div>
+
+  <%# <% if current_user.user_type == "Artist" %>
