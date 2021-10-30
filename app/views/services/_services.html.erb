@@ -9,7 +9,7 @@
 
       <div class="service-grid-info">
         <%= link_to service.user.name, service_path(service), class: 'text-bold' %>
-        <%= "$#{service.rate}" %>
+        <%= "$#{service.rate}/song" %>
       </div>
 
       <% if current_user.user_type == 'Artist' %>
