@@ -1,6 +1,6 @@
 class Service < ApplicationRecord
   GENRES = %w[Alternative Balada Banda-sinaloense Blues Children's Classical
-              Dance Electronic Hip-Hop/Rap Instrumental Jazz Latin Mariachi
+              Dance Electronic Hip-Hop Instrumental Jazz Latin Mariachi
               New-age Opera Parody Pop Reggae Regional Religious Rock Vocal]
   belongs_to :user
   has_many :bookings
