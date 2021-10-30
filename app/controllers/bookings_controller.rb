@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     @amount = @booking.num_songs * @service.rate
     @booking.amount = @amount
     @booking.user = current_user
+    # raise
     @booking.save!
     redirect_to bookings_path
   end
