@@ -8,7 +8,7 @@
       <% end %>
 
       <div class="service-grid-info">
-        <%= link_to service.user.name, service_path(service), class: 'text-bold' %>
+        <%= link_to service.name, service_path(service), class: 'text-bold' %>
         <%= "$#{service.rate}" %>
       </div>
 
