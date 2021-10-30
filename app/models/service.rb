@@ -3,7 +3,7 @@ class Service < ApplicationRecord
               Dance Electronic Hip-Hop Instrumental Jazz Latin Mariachi
               New-age Opera Parody Pop Reggae Regional Religious Rock Vocal]
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
   validates :name, presence: true
