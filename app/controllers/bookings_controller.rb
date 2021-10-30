@@ -29,6 +29,12 @@ class BookingsController < ApplicationController
     @booking_date = @booking.booking_date.strftime('%a %d %b %Y')
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
+  end
+
   private
 
   def booking_params
